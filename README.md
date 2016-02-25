@@ -9,7 +9,7 @@ pip install -r requirements.txt
 Tested with python 2.7.10
 
 ## Usage
-python resumeos.py --name 'My cool OS proejct' --output 'Hello world'
+python resumeos.py --name 'My cool OS project' --output 'Hello world!'
 
 ## Credits
 
