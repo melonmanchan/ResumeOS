@@ -1,5 +1,10 @@
 # ResumeOS
-Easily bootstrap an OS project to put on your resume
+Easily bootstrap an OS project to fool HR departments and pad your resume.
+
+## Installation
+```sh
+pip install -r requirements.txt
+```
 
 ## Credits
 
