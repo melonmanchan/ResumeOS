@@ -6,6 +6,11 @@ Easily bootstrap an OS project to fool HR departments and pad your resume.
 pip install -r requirements.txt
 ```
 
+Tested with python 2.7.10
+
+## Usage
+python resumeos.py --name 'My cool OS proejct' --output 'Hello world'
+
 ## Credits
 
 This project is based completely on the works of the very handsome and talented Philipp Oppermann
