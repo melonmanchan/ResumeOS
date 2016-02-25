@@ -1,6 +1,6 @@
-# My cool new os
+# {{name}}
 
-## Dependancies (Ubuntu)
+## Dependancies (for Ubuntu)
 
 ```sh
 sudo apt-get install nasm
