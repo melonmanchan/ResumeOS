@@ -36,9 +36,9 @@ def render_template_file(file_name, context):
 def main(name, output, font):
     """ Easily bootstrap an OS project to fool HR departments and pad your resume. """
 
-    directory_name = os.getcwd() + '/' + name.lower().replace(' ', '-') + '/'
+    directory_name = os.getcwd() + os.sep + name.lower().replace(' ', '-') +  os.sep
 
-    copy_tree(get_real_path('/my-cool-os-template'), directory_name)
+    copy_tree(get_real_path(os.sep + 'my-cool-os-template'), directory_name)
 
     start_byte = int('0xb8000', 16)
     instructions_list = []
