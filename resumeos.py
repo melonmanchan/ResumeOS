@@ -33,7 +33,7 @@ def main(name, output):
 
     directory_name = os.getcwd() + '/' + name.lower().replace(' ', '-') + '/'
 
-    copy_tree(get_real_path('/my-cool-os'), directory_name)
+    copy_tree(get_real_path('/my-cool-os-template'), directory_name)
 
     start_byte = int('0xb8000', 16)
     instructions_list = []
