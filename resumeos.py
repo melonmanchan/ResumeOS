@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 __author__ = "Matti Jokitulppo"
 
-import click
 from distutils.dir_util import copy_tree
-import os
 from jinja2 import Template
+from pyfiglet import Figlet
+
+import click
+import os
 
 def get_real_path(filename):
     return os.path.dirname(os.path.realpath(__file__)) + filename
@@ -28,7 +30,10 @@ def render_template_file(file_name, context):
             default='Hello, world!',
             help='The string output by your OS on boot',
             prompt='What do you want to print on boot? ')
-def main(name, output):
+@click.option('--font',
+            default='slant',
+            help='The font used in the kickass README.md ASCII banner (used with pyfiglet)')
+def main(name, output, font):
     """ Easily bootstrap an OS project to fool HR departments and pad your resume. """
 
     directory_name = os.getcwd() + '/' + name.lower().replace(' ', '-') + '/'
@@ -38,16 +43,19 @@ def main(name, output):
     start_byte = int('0xb8000', 16)
     instructions_list = []
 
+    # Create the necessary assembly mov instructions for printing out the output on boot
     for c in output:
         char_as_hex = '0x02'+ c.encode('hex')
         instructions_list.append('\tmov word [{0}], {1} ; {2}'.format(hex(start_byte), char_as_hex, c))
         start_byte += 2
 
-    render_template_file(directory_name  + 'README.md', {'name': name})
-    render_template_file(directory_name  + 'grub.cfg' , {'name': name})
-    render_template_file(directory_name  + 'boot.asm' , {'instructions_list': instructions_list})
+    banner = Figlet(font=font).renderText(name)
 
-    print('finished bootstrapping OS project at ' + directory_name)
+    render_template_file(directory_name  + 'README.md', {'name' : name, 'banner' : banner})
+    render_template_file(directory_name  + 'grub.cfg' , {'name' : name})
+    render_template_file(directory_name  + 'boot.asm' , {'instructions_list' : instructions_list})
+
+    print('finished bootstrapping OS project into directory ' + directory_name)
 
 if __name__ == '__main__':
     main()
