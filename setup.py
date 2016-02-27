@@ -12,7 +12,7 @@ version = '0.0.1'
 
 setup(
     name='resumeos',
-    packages = ['resumeos'],
+    packages=find_packages(),
     version=version,
     install_requires=requirements,
     author='Matti Jokitulppo',
@@ -24,7 +24,7 @@ setup(
     long_description=long_description,
     entry_points={
         'console_scripts': [
-            'resumeos = resumeos:main'
+            'resumeos = resumeos.resumeos:main'
         ]
     },
     keywords = ['OS', 'resume', 'filler', 'lazy']
