@@ -7,14 +7,18 @@ resume.
 Installation
 ------------
 
+The old way
 .. code:: sh
 
     git clone https://github.com/melonmanchan/ResumeOS
     cd ResumeOS
-    pip install -r requirements.txt
+    python setup.py install
 
-Tested with Python 2.7.10 on Ubuntu 15.10. PIP package coming soon,
-whenever I’ll get to it.
+Or with PIP
+.. code:: sh
+    pip install resumeos
+
+Tested with Python 2.7.10 on Ubuntu 15.10.
 
 Usage
 -----
@@ -23,7 +27,7 @@ Just install the required dependancies as specified above, and run
 
 .. code:: sh
 
-    python resumeos.py --name 'My cool OS project' --output 'Best project ever!'
+    resumeos --name 'My cool OS project' --output 'Best project ever!'
 
 to bootstrap your very own totally unique OS, that prints the output
 message and halts.
