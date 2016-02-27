@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 __author__ = "Matti Jokitulppo <melonmanchan@gmail.com>"
 
 from distutils.dir_util import copy_tree
