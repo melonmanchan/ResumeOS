@@ -8,6 +8,7 @@ Installation
 ------------
 
 The old way
+
 .. code:: sh
 
     git clone https://github.com/melonmanchan/ResumeOS
@@ -15,7 +16,9 @@ The old way
     python setup.py install
 
 Or with PIP
+
 .. code:: sh
+
     pip install resumeos
 
 Tested with Python 2.7.10 on Ubuntu 15.10.
